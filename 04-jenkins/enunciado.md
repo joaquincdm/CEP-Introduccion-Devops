@@ -27,24 +27,28 @@ El Jenkinsfile debe cubrir los siguientes requisitos:
 4. **Instalación de dependencias**
    - Incluye una etapa "Install dependencies" que instale las dependencias del proyecto con `npm install`.
 
-5. **Chequeo de formato de código**
+5. **Creación de ficheros autogenerados**
+   - Incluye una etapa "Generate files" que cree los ficheros autogenerados que necesita el proyecto con `npm run prisma:generate`.
+
+6. **Chequeo de formato de código**
    - Incluye una etapa "Format check" que verifique el formato del código usando `npm run format:check`.
 
-6. **Chequeo de calidad de código**
+7. **Chequeo de calidad de código**
    - Incluye una etapa "Code quality" que verifique la calidad del código usando `npm run lint`.
 
-7. **Chequeo de tipos**
+8. **Chequeo de tipos**
    - Implementa una etapa "Type check" que ejecute la comprobación de tipos con `npm run type-check`.
 
-8. **Ejecución de tests**
+9. **Ejecución de tests**
    - Implementa una etapa "Tests" que ejecute los tests usando `npm run test`.
 
-9. **Construcción y archivado**
-   - Implementa una etapa "Build" que construya la solución usando `npm run build`.
-   - Esta etapa deberá de archivar los artefactos del directorio `dist/`. El _fingerprint_ deberá estar activo.
-   - Verifica que los artefactos son visibles. Deberás de ver dentro del job el archivo `server.mjs`.
+10. **Construcción y archivado**
 
-10. **Etapas finales**
+- Implementa una etapa "Build" que construya la solución usando `npm run build`.
+- Esta etapa deberá de archivar los artefactos del directorio `dist/`. El _fingerprint_ deberá estar activo.
+- Verifica que los artefactos son visibles. Deberás de ver dentro del job el archivo `server.mjs`.
+
+11. **Etapas finales**
     - Configura que cuando el job finalice exitosamente muestre por pantalla: `'Pipeline completed successfully!'`.
     - Configura que cuando el job finalice con errores muestre por pantalla: `'Pipeline failed. Review logs.'`.
     - Configura que cuando el job finalice, sin importar cómo, siempre limpie el workspace.
